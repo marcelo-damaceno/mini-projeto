@@ -30,4 +30,8 @@ async function iniciarProjeto(){
 document.addEventListener('DOMContentLoaded',iniciarProjeto)
 document.getElementById('add-interesse').addEventListener('click', adicionarInteresse)
 
+setInterval(() => {
+  renderLista(interesse.getItems())
+},1000)
+
 
