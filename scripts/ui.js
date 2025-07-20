@@ -8,7 +8,6 @@ export function renderLista(items) {
     listaItemsElemento.innerHTML = ""
 
     if (items.length >0) {
-      console.log(items)
 
       items.forEach((item) => {
           const listaItemElemento = document.createElement('li')
