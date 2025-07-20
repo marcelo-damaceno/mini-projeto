@@ -1,8 +1,12 @@
 import { renderLista } from "./ui.js"
+import { renderNoticia } from "./ui.js"
 import { Interesse } from "./interesse.js"
+import { getNews } from "./api.js"
 
 const interesse = new Interesse
 const novoInteresseElemento = document.getElementById('interesse-descricao')
+
+var noticia
 
 function adicionarInteresse() {
   let novoInteresse = novoInteresseElemento.value
@@ -29,6 +33,14 @@ function limparInteresse(){
 async function iniciarProjeto(){
   
   renderLista(interesse.getItems())
+
+  try {
+    noticia = await getNews()
+    renderNoticia(noticia)
+
+  } catch (error){
+    console.log('erro ao carregar as noticias')
+  }
 }
 
 document.addEventListener('DOMContentLoaded',iniciarProjeto)
