@@ -22,6 +22,7 @@ export class Interesse {
         if(listaStorage) {
             const lista = JSON.parse(listaStorage);
 
+            console.log(lista)
             return lista;
         }
 
