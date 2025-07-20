@@ -14,7 +14,7 @@ export function renderLista(items) {
           const listaItemElemento = document.createElement('li')
           listaItemElemento.classList.add('lista-item')
 
-          listaItemElemento.innerHTML = ` <li>${item.interesse}</li> `
+          listaItemElemento.innerHTML = ` <li>${item}</li> `
           listaItemsElemento.appendChild(listaItemElemento)
       });
     }    
