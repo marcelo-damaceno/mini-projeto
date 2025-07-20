@@ -16,6 +16,11 @@ export class Interesse {
         return this.items
     }
 
+    clearItems(){
+        localStorage.removeItem(this.#key) 
+        this.items = []
+    }
+
     loadFromLocalStorage(){
         const listaStorage = localStorage.getItem(this.#key)
 

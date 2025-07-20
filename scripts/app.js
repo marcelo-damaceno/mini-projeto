@@ -2,7 +2,6 @@ import { renderLista } from "./ui.js"
 import { Interesse } from "./interesse.js"
 
 const interesse = new Interesse
-const buttonAdicionarElemento = document.getElementById('add-interesse')
 const novoInteresseElemento = document.getElementById('interesse-descricao')
 
 function adicionarInteresse() {
@@ -22,6 +21,11 @@ function adicionarInteresse() {
 
 }
 
+function limparInteresse(){
+  interesse.clearItems()
+  renderLista(interesse.getItems())
+}
+
 async function iniciarProjeto(){
   
   renderLista(interesse.getItems())
@@ -29,6 +33,8 @@ async function iniciarProjeto(){
 
 document.addEventListener('DOMContentLoaded',iniciarProjeto)
 document.getElementById('add-interesse').addEventListener('click', adicionarInteresse)
+document.getElementById('clear-interesse').addEventListener('click', limparInteresse)
+
 
 setInterval(() => {
   renderLista(interesse.getItems())
